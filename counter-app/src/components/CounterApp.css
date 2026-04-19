@@ -1,0 +1,54 @@
+.container {
+    background-color: #f7eded;
+    width: 500px;
+    height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+}
+
+.container > * {
+    margin-bottom: 2rem;
+}
+
+.counter-display {
+    font-size: 6rem;
+    font-weight: 700;
+}
+
+.container-btn {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}        
+
+.btn {
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btn.increase {
+    padding: 10px 20px;
+    /* font-size: xx-large; */
+    background-color: #46b846;
+}
+
+.btn.decrease {
+    /* font-size: x-large; */
+    background-color: #fb4242;
+}
+
+.btn.reset {
+    /* font-size: x-large; */
+    background-color: #3be3e3;
+}
