@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(to left, #5fd3c1, #11917e);
+}
+
+.container {
+  background-color: #e0f9f5;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  width: 500px;
+  height: 500px;
+  padding: 10px 20px;
+
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+h1 { 
+  margin: 20px 0;
+}

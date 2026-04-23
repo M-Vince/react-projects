@@ -1,0 +1,27 @@
+section {
+    margin: 10px 20px;
+    padding: 10px 20px;
+
+    background-color: #cde6e2;
+
+    height: 100vh;
+}
+
+button {
+    width: 100px;
+    height: 75px;
+
+    background-color: #b7f1e7;
+
+    &:hover {
+        background-color: #8ff3e3;
+    }
+
+    &:active {
+        background-color: #549b8f;
+    }
+}
+
+.hidden {
+    visibility: hidden;
+}
