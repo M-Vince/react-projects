@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-roboto: 'Roboto', sans-serif;
+  
+  /* 704px + 320px (Sidebar min-w-screen) = 1024px */
+  --navbar-screen: calc(100vw - 704px); 
+}
+
+
+body {
+  background: linear-gradient(to left, #18376f, #527dce);
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+}
