@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-roboto: 'Roboto', sans-serif; 
+}
+
+
+body {
+
+  /* font-family: 'Roboto Slab', sans-serif; */
+
+  /* background: linear-gradient(to left, #18376f, #527dce); */
+  /* background: linear-gradient(to bottom left, #0f172a, #1e1a78, #0f172a); */
+  background: linear-gradient(to right, #2193b0, #6dd5ed);
+}
+
+h1 {
+  font-family: 'Caprasimo', cursive;
+  font-size: 3rem;
+  margin: 0 auto 3rem auto;
+  color: #eaeaea;
+}
+
+header {
+  text-align: center;
+}
+
+header img {
+  width: 8rem;
+  object-fit: contain;
+  margin: 3rem auto 1rem auto;
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.4));
+}
