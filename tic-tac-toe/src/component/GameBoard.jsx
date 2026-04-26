@@ -13,7 +13,9 @@ export default function GameBoard() {
             <ol className="flex flex-wrap justify-center gap-8">
               {row.map((col, colIndex) => (
                 <li key={colIndex}>
-                  <button>{col}</button>
+                  <button className="w-32 h-32 p-4 border-none bg-[#aca788] text-[#3f3b00] text-6xl font-[--font-game-board] cursor-pointer">
+                    {col}
+                  </button>
                 </li>
               ))}
             </ol>
