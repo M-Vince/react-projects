@@ -6,7 +6,8 @@ export default function Player({ playerName, symbol }) {
   const [changeName, setChangeName] = useState(playerName);
 
   const handleEditButton = () => {
-    setIsEditing(!isEditing);
+    // setIsEditing(!isEditing);
+    setIsEditing(editing => !editing);
   }
 
   return (
@@ -16,8 +17,9 @@ export default function Player({ playerName, symbol }) {
           // If true, display edit mode . If false, display player's name. 
           isEditing ?
           <>
-            <span className="w-40 p-2 bg-[#46432f] text-[#e1dec7] text-lg text-center uppercase border-none animate-pulse ">
+            <span>
               <input
+                className="w-40 p-2 bg-[#46432f] text-[#e1dec7] text-lg text-center uppercase border-none animate-pulse"
                 type="text"
                 onChange={(e) => {
                   setChangeName(e.target.value);
@@ -30,9 +32,9 @@ export default function Player({ playerName, symbol }) {
             <span className="inline-block w-40 text-xl text-[#e1dec7] uppercase m-0 p-2 rounded-sm text-ellipsis text-center">
               {changeName}
             </span>
-            <span className="ml-4 text-xl text-[#e1dec7]">{symbol}</span>
           </>
         }
+        <span className="ml-4 text-xl text-[#e1dec7]">{symbol}</span>
         
       </span>
 

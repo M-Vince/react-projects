@@ -1,5 +1,6 @@
 import React from 'react'
 import Player from './component/Player'
+import GameBoard from './component/GameBoard'
 
 function App() {
   return (
@@ -13,10 +14,7 @@ function App() {
         </ol>
 
         {/* Game Board */}
-        <div>
-
-
-        </div>
+        <GameBoard />
 
       </div>
 
