@@ -17,15 +17,16 @@ const initialGameBoard = [
 export default function GameBoard({ onSelectSquare, turns }) {
   let gameBoard = initialGameBoard;
 
-  for(const turn of turns) {
+  // Deriving state from props
+  for (const turn of turns) {
+    // Object destructuring
     const { square, player } = turn;
-    const {row, col} = square;
+    const { row, col } = square;
 
     // gameBoard[ square.row ][ square.col ] = player;
     gameBoard[row][col] = player;
   }
   console.log(gameBoard);
-
 
   // const [gameBoard, setGameBoard] = useState(initialGameBoard);
 
