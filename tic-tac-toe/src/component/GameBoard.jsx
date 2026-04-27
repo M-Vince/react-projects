@@ -14,30 +14,42 @@ const initialGameBoard = [
   [null, null, null],
 ];
 
-export default function GameBoard({ onSelectSquare, playerSymbol }) {
-  const [gameBoard, setGameBoard] = useState(initialGameBoard);
+export default function GameBoard({ onSelectSquare, turns }) {
+  let gameBoard = initialGameBoard;
 
-  function handleSelectedSquare(rIndx, cIndx) {
-    // const newBoard = [...gameBoard];
-    // newBoard[rIndx] = [...gameBoard[rIndx]];
-    // newBoard[rIndx][cIndx] = symbol;
-    // setGameBoard(newBoard);
+  for(const turn of turns) {
+    const { square, player } = turn;
+    const {row, col} = square;
 
-    // const newBoard = [...gameBoard.map(innerArray => {
-    //     console.log('innerArray:' + innerArray)
-    //     return [...innerArray]
-    // })];
-    // const newBoard = [...gameBoard];
-    // console.log('NewBoard:' + newBoard);
-
-    setGameBoard((prevBoard) => {
-      const updatedBoard = [...prevBoard.map((innerArray) => [...innerArray])];
-      updatedBoard[rIndx][cIndx] = playerSymbol;
-      return updatedBoard;
-    });
-
-    onSelectSquare();
+    // gameBoard[ square.row ][ square.col ] = player;
+    gameBoard[row][col] = player;
   }
+  console.log(gameBoard);
+
+
+  // const [gameBoard, setGameBoard] = useState(initialGameBoard);
+
+  // function handleSelectedSquare(rIndx, cIndx) {
+  // const newBoard = [...gameBoard];
+  // newBoard[rIndx] = [...gameBoard[rIndx]];
+  // newBoard[rIndx][cIndx] = symbol;
+  // setGameBoard(newBoard);
+
+  // const newBoard = [...gameBoard.map(innerArray => {
+  //     console.log('innerArray:' + innerArray)
+  //     return [...innerArray]
+  // })];
+  // const newBoard = [...gameBoard];
+  // console.log('NewBoard:' + newBoard);
+
+  // setGameBoard((prevBoard) => {
+  //   const updatedBoard = [...prevBoard.map((innerArray) => [...innerArray])];
+  //   updatedBoard[rIndx][cIndx] = playerSymbol;
+  //   return updatedBoard;
+  // });
+
+  // onSelectSquare();
+  // }
 
   return (
     <>
@@ -49,8 +61,10 @@ export default function GameBoard({ onSelectSquare, playerSymbol }) {
                 <li key={colIndex}>
                   <button
                     className="w-32 h-32 p-4 border-none bg-[#aca788] text-[#fffffd] text-6xl font-[--font-game-board] cursor-pointer"
-                    onClick={() =>
-                      handleSelectedSquare(rowIndex, colIndex)
+                    onClick={
+                      // () =>
+                      // handleSelectedSquare(rowIndex, colIndex)
+                      () => onSelectSquare(rowIndex, colIndex)
                     }
                   >
                     {col}
