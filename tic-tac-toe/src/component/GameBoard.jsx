@@ -1,33 +1,7 @@
 import { useState } from "react";
 
-const initialGameBoard = [
-  //   [null, "X", null],
-  //   ["O", "null", "O"],
-  //   [null, "X", null],
 
-  //   [null, 'x', null],
-  //   [null, null, null],
-  //   [null, null, null],
-
-  [null, null, null],
-  [null, null, null],
-  [null, null, null],
-];
-
-export default function GameBoard({ onSelectSquare, turns }) {
-  let gameBoard = initialGameBoard;
-
-  // Deriving state from props
-  for (const turn of turns) {
-    // Object destructuring
-    const { square, player } = turn;
-    const { row, col } = square;
-
-    // gameBoard[ square.row ][ square.col ] = player;
-    gameBoard[row][col] = player;
-  }
-  console.log(gameBoard);
-
+export default function GameBoard({ onSelectSquare, board }) {
   // const [gameBoard, setGameBoard] = useState(initialGameBoard);
 
   // function handleSelectedSquare(rIndx, cIndx) {
@@ -55,7 +29,7 @@ export default function GameBoard({ onSelectSquare, turns }) {
   return (
     <>
       <ol className="flex flex-wrap flex-col justify-center gap-8 my-12 ">
-        {gameBoard.map((row, rowIndex) => (
+        {board.map((row, rowIndex) => (
           <li key={rowIndex}>
             <ol className="flex flex-wrap justify-center gap-8">
               {row.map((col, colIndex) => (
@@ -67,6 +41,7 @@ export default function GameBoard({ onSelectSquare, turns }) {
                       // handleSelectedSquare(rowIndex, colIndex)
                       () => onSelectSquare(rowIndex, colIndex)
                     }
+                    disabled={col !== null }
                   >
                     {col}
                   </button>
