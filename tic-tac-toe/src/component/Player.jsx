@@ -1,13 +1,18 @@
 import React from "react";
 import { useState } from "react";
 
-export default function Player({ playerName, symbol, isActive }) {
+export default function Player({ playerName, symbol, isActive, onChangeName }) {
   const [isEditing, setIsEditing] = useState(false);
   const [changeName, setChangeName] = useState(playerName);
 
   const handleEditButton = () => {
     // setIsEditing(!isEditing);
     setIsEditing(editing => !editing);
+
+    if( isEditing ) {
+      onChangeName(symbol, changeName);
+    }
+
   } 
   return (
     <li className={`${isActive === symbol && 'highlight-player'} flex items-center w-[50%] border-2 border-solid border-transparent`}>
